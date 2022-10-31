@@ -1,0 +1,11 @@
+<div style="width:60%;margin:0 auto;margin-bottom:50px;margin-top:25px;text-align:center">
+ Dakshina <span id="date"></span>
+ <img style="margin-top:20px;" src="https://imageio.forbes.com/specials-images/imageserve/6246b94443331266d0503f2b/Solar-Eclipse-at-sunrise-over-lake/0x0.jpg?format=jpg&amp;crop=5866,2751,x0,y1159,safe&amp;width=960">
+</div>
+<script> 
+var d1 = new Date("10/24/2022");   
+var d2 = new Date();    
+var x= d2.getTime() - d1.getTime();   
+var date= Math.trunc( x / (1000 * 60 * 60 * 24) );  
+document.getElementById('date').innerHTML = date;
+</script>
