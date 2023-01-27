@@ -1,11 +1,20 @@
 <div style="width:60%;margin:0 auto;margin-bottom:50px;margin-top:25px;text-align:center">
- Dakshina <span id="date"></span>
- <img style="margin-top:20px;" src="https://imageio.forbes.com/specials-images/imageserve/6246b94443331266d0503f2b/Solar-Eclipse-at-sunrise-over-lake/0x0.jpg?format=jpg&amp;crop=5866,2751,x0,y1159,safe&amp;width=960">
+ <span id="ayan">Dakshina</span> <span id="date"></span>
+ <img id="dak-img" style="margin-top:20px;" src="https://imageio.forbes.com/specials-images/imageserve/6246b94443331266d0503f2b/Solar-Eclipse-at-sunrise-over-lake/0x0.jpg?format=jpg&amp;crop=5866,2751,x0,y1159,safe&amp;width=960">
 </div>
 <script>
 var d2 = new Date();
 var d1 = new Date("10/24/" + d2.getFullYear());
+var x;
+if (d1 > d2) {
+  d1 = new Date("10/24/" + (d2.getFullYear()-1));
+}
 var x= d2.getTime() - d1.getTime();
 var date= Math.trunc( x / (1000 * 60 * 60 * 24) );
+if (date > 183) {
+  date = date-182;
+  document.getElementById('ayan').innerHTML = 'Uttarayan';
+  document.getElementById("dak-img").style.filter = "brightness(30)"; // rotate 85 if want green
+}
 document.getElementById('date').innerHTML = date;
 </script>
